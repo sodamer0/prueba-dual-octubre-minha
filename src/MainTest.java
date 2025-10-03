@@ -16,14 +16,14 @@ public class MainTest {
     }
 
     @Test
-    void testEsPar() {
-        assertTrue(Main.esPar(16));
-        assertFalse(Main.esPar(7));
-        assertTrue(Main.esPar(8));
-        assertTrue(Main.esPar(2));
-        assertTrue(Main.esPar(0));
-        assertFalse(Main.esPar(3));
-        assertFalse(Main.esPar(-5));
+    void testEsMultiplo() {
+        assertTrue(Main.esMultiplo(15, 5));
+        assertFalse(Main.esMultiplo(15,2));
+        assertTrue(Main.esMultiplo(16,8));
+        assertTrue(Main.esMultiplo(72, 8));
+        assertTrue(Main.esMultiplo(100, 50));
+        assertFalse(Main.esMultiplo(13,3));
+        assertFalse(Main.esMultiplo(19,9));
     }
 
     @Test
@@ -36,11 +36,11 @@ public class MainTest {
     }
 
     @Test
-    void testContarPositivos() {
-        assertEquals(6, Main.contarPositivos(new int[]{1, 2, 3}));
-        assertEquals(0, Main.contarPositivos(new int[]{-1, -2, -3}));
-        assertEquals(5, Main.contarPositivos(new int[]{-1, 5, -3}));
-        assertEquals(0, Main.contarPositivos(new int[]{})); // array vacío
+    void testSumarPositivos() {
+        assertEquals(6, Main.sumarPositivos(new int[]{1, 2, 3}));
+        assertEquals(0, Main.sumarPositivos(new int[]{-1, -2, -3}));
+        assertEquals(5, Main.sumarPositivos(new int[]{-1, 5, -3}));
+        assertEquals(0, Main.sumarPositivos(new int[]{})); // array vacío
     }
 
     @Test
