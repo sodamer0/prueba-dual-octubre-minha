@@ -1,8 +1,37 @@
+import java.util.Scanner;
+
+
 
 public class Main {
-    public static void main(String[] args) {
-        //Llamadas a la funciones
 
+  private static Scanner teclado = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        //Llamadas a la funciones
+      int calificacion = teclado.nextInt();
+      letraNota(calificacion);
+
+      int numero01 = teclado.nextInt();
+      int numero02 = teclado.nextInt();
+      esMultiplo(numero01,numero02);
+
+
+      int numero03 = teclado.nextInt();
+      factorial(numero03);
+
+      /*
+      int dimension = teclado.nextInt();
+      int [] arrayNumeros = new int[dimension];
+      for (int i=0;i<arrayNumeros.length;i++){
+        arrayNumeros[i] = teclado.nextInt();
+      }
+      */
+      int[] arrayNumeros = new int[]{};
+      sumarPositivos(arrayNumeros);
+
+      double [] arrayNotas = new double[]{};
+      notaMaxima(arrayNotas);
 
     }
 
@@ -13,7 +42,18 @@ public class Main {
      */
     public static String letraNota(int nota){
         //TODO
-        return "";
+      if (nota>=9){
+        return "A";
+      }else if (nota>=7 && nota<9){
+        return "B";
+      }else if (nota>=5 && nota<7){
+        return "C";
+      }else if (nota>=3 && nota<5){
+        return "D";
+      }else if (nota>=0 && nota<3){
+        return "F";
+      }else
+        return "Nota no válida.";
     }
     /**
      * Función para saber si un número es multiplo de otro
@@ -24,6 +64,9 @@ public class Main {
      */
     public static boolean esMultiplo(int dividendo, int divisor) {
         //TODO
+      if(dividendo % divisor == 0){
+        return true;
+      }
         return false;
     }
 
@@ -35,7 +78,12 @@ public class Main {
      */
     public static int factorial(int n) {
         //TODO
-        return 0;
+      int factorial = 1;
+      int suma = 0;
+      for (int i=1; i<=n; i++){
+        factorial *= i;
+      }
+        return factorial;
     }
 
     /**
@@ -45,7 +93,14 @@ public class Main {
      */
     public static int sumarPositivos(int[] numeros) {
         //TODO
-        return 0;
+      int suma=0;
+
+      for(int i=0;i<numeros.length;i++){
+        if(numeros[i]>0){
+          suma += numeros[i];
+        }
+      }
+        return suma;
     }
 
     /**
@@ -55,6 +110,12 @@ public class Main {
      */
     public static double notaMaxima(double[] notas) {
         //TODO
-        return 0.0;
+      double notaMax = notas[0];
+      for (int i=0; i<notas.length; i++){
+        if (notas[i]>notaMax){
+          notaMax = notas[i];
+        }
+      }
+        return notaMax;
     }
 }
