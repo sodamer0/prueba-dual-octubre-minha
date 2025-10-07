@@ -79,12 +79,20 @@ public class Main {
     public static int factorial(int n) {
         //TODO
       int factorial = 1;
-      int suma = 0;
       for (int i=1; i<=n; i++){
         factorial *= i;
       }
-        return factorial;
+      return factorial;
     }
+      /*
+      int contador = 1;
+      for (int i=n; i>0; i--){
+        contador = contador * i;
+        }
+        return contador;
+      }
+       */
+
 
     /**
      * Función para que dado un array de números devuelva la suma de unicamente los positivos
@@ -112,7 +120,7 @@ public class Main {
         //TODO
       double notaMax = notas[0];
       for (int i=0; i<notas.length; i++){
-        if (notas[i]>notaMax){
+        if (notas[i] > notaMax){
           notaMax = notas[i];
         }
       }
